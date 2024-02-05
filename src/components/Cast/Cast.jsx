@@ -5,7 +5,7 @@ import { NoCast } from 'Error/Error';
 import { List, Item, Img, Name, Character } from './Cast.styled';
 
 export const Cast = () => {
-  const [cast, setCast] = useState(null);
+  const [cast, setCast] = useState([]);
   const { movieId } = useParams();
   const imgBaseUrl = 'https://image.tmdb.org/t/p/w500/';
 
@@ -14,7 +14,7 @@ export const Cast = () => {
   }, [movieId]);
 
   if (!cast) {
-    return;
+    return null;
   }
 
   return (
